@@ -5,4 +5,4 @@ Material Invoice is not connected with any DB or File system but can be connecte
 
 Later we will add .DOCX based document creation for Invoice and Shipping slip which we will do by using Aspose Plugin for .DOCX
 
-#Material Design is based on the plugin for scene builder by JFoenix 
+Material Design is based on the plugin for scene builder by JFoenix 
