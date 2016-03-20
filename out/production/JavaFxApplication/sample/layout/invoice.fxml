@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InvoiceController">
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox prefHeight="42.0" prefWidth="500.0" style="-fx-background-color: #7CAFC2;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="labelInvoice" prefHeight="60.0" prefWidth="98.0" text="New Invoice" textAlignment="CENTER" textFill="#f8f8f8">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="8.0" left="24.0" right="8.0" top="8.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <left>
+                  <GridPane prefHeight="721.0" prefWidth="1260.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="0.0" prefWidth="27.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="499.0" minWidth="10.0" prefWidth="134.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.0" minWidth="10.0" prefWidth="408.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="535.0" minWidth="10.0" prefWidth="122.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="535.0" minWidth="10.0" prefWidth="122.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="535.0" minWidth="10.0" prefWidth="122.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="466.0" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="466.0" minWidth="10.0" prefWidth="141.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints fillHeight="false" maxHeight="16.0" minHeight="16.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="36.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="36.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="36.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints fillHeight="false" maxHeight="80.0" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXButton fx:id="buttonSave" onAction="#setShipping" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #7CAFC2;" text="SET SHIPPING" textFill="#f8f8f8" GridPane.columnIndex="2" GridPane.rowIndex="16">
+                           <GridPane.margin>
+                              <Insets left="18.0" right="18.0" />
+                           </GridPane.margin></JFXButton>
+                        <Label prefHeight="36.0" prefWidth="109.0" text="CUSTOMER" textFill="#7cafc2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="36.0" prefWidth="112.0" text="INVOICE NUMBER" textFill="#7cafc2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="invoiceCustomerName" maxWidth="483.0" minWidth="467.0" prefHeight="33.0" prefWidth="467.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="invoiceNumber" promptText="TBFN11031601" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="122.0" text="DATE :" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="invoiceDate" alignment="CENTER_RIGHT" maxWidth="188.0" minWidth="51.0" opacity="0.51" prefHeight="33.0" prefWidth="101.0" promptText="11/03/2016" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <Label prefHeight="35.0" prefWidth="177.0" text="ITEM DETAILS" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin></Label>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="166.0" text="QUANTITIY" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER" prefHeight="36.0" prefWidth="150.0" text="RATE" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="212.0" text="AMOUNT" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="item1" opacity="0.56" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="rate1" opacity="0.56" text="0.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="amount1" editable="false" opacity="0.56" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                        <Label prefHeight="44.0" prefWidth="161.0" text="SUB TOTAL" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                        <Label prefHeight="44.0" prefWidth="154.0" text="DISCOUNT RATE" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="13" />
+                        <Label prefHeight="45.0" prefWidth="126.0" text="NET TOTAL" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="16" />
+                        <JFXTextField fx:id="subTotal" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+                        <JFXTextField fx:id="discountRate" GridPane.columnIndex="7" GridPane.rowIndex="13" />
+                        <JFXTextField fx:id="totalAmount" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="16" />
+                        <Label alignment="CENTER" prefHeight="44.0" prefWidth="132.0" text="PAYMENT" textFill="#7cafc2" GridPane.columnIndex="4" GridPane.rowIndex="15" />
+                        <JFXRadioButton fx:id="radioCod" contentDisplay="RIGHT" prefHeight="46.0" prefWidth="122.0" text="COD" textFill="#7cafc2" GridPane.columnIndex="3" GridPane.rowIndex="16" />
+                        <JFXRadioButton fx:id="radioOnline" prefHeight="46.0" prefWidth="160.0" text="ONLINE" textFill="#7cafc2" GridPane.columnIndex="4" GridPane.rowIndex="16" />
+                        <JFXTextField fx:id="item3" opacity="0.56" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                        <JFXTextField fx:id="amount3" editable="false" opacity="0.56" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                        <JFXTextField fx:id="rate3" opacity="0.56" text="0.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                        <JFXTextField fx:id="item2" opacity="0.56" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="rate2" opacity="0.56" text="0.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="amount2" editable="false" opacity="0.56" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="item4" opacity="0.56" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                        <JFXTextField fx:id="rate4" opacity="0.56" text="0.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                        <JFXTextField fx:id="amount4" editable="false" opacity="0.56" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                        <JFXTextField fx:id="item5" opacity="0.56" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+                        <JFXTextField fx:id="amount5" editable="false" opacity="0.56" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                        <JFXTextField fx:id="rate5" opacity="0.56" text="0.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                        <JFXRadioButton fx:id="radioPaid" contentDisplay="RIGHT" prefHeight="45.0" prefWidth="136.0" text="PAID" textFill="#7cafc2" GridPane.columnIndex="5" GridPane.rowIndex="16" />
+                        <JFXTextField fx:id="quantity1" maxWidth="120.0" minWidth="30.0" opacity="0.53" prefWidth="60.0" text="0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="quantity2" maxWidth="120.0" minWidth="30.0" opacity="0.53" prefWidth="60.0" text="0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="quantity3" maxWidth="120.0" minWidth="30.0" opacity="0.53" prefWidth="60.0" text="0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="quantity4" maxWidth="120.0" minWidth="30.0" opacity="0.53" prefWidth="60.0" text="0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="quantity5" maxWidth="120.0" minWidth="30.0" opacity="0.53" prefWidth="60.0" text="0" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <Label prefHeight="44.0" prefWidth="170.0" text="TAX RATE" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                        <JFXTextField fx:id="taxRate" promptText="0%" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+                        <Label prefHeight="44.0" prefWidth="160.0" text="TAX AMOUNT" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="11" />
+                        <JFXTextField fx:id="taxAmount" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="11" />
+                        <JFXTextField fx:id="discountAmount" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="14" />
+                        <Label prefHeight="44.0" prefWidth="156.0" text="DISCOUNT AMOUNT" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="14" />
+                        <Label prefHeight="44.0" prefWidth="156.0" text="SHIPPING CHARGES" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="15" />
+                        <JFXTextField fx:id="shippingCharges" GridPane.columnIndex="7" GridPane.rowIndex="15" />
+                        <JFXTextField fx:id="grossTotal" editable="false" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+                        <Label fx:id="discountRate1" prefHeight="44.0" prefWidth="154.0" text="GROSS TOTAL" textFill="#7cafc2" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+                        <JFXButton fx:id="syncValue" alignment="CENTER" onAction="#syncValue" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: #7ACFC2;" text="SYNC" textFill="#f8f8f8" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                     </children>
+                  </GridPane>
+               </left>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>
