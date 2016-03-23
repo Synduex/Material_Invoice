@@ -60,6 +60,9 @@ public class InvoiceController {
     double grossTotalResult;
     double netTotal;
 
+    public String paymentOptionChosen;
+
+
 
     @FXML
     public void setShipping() throws IOException{
@@ -69,7 +72,7 @@ public class InvoiceController {
     public void startShippingActivity() throws IOException{
         Stage stage = new Stage();
         stage.setTitle("Shop Management");
-        Pane myPane = null;
+        Pane myPane;
         myPane = FXMLLoader.load(getClass().getResource(resource));
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
@@ -84,7 +87,7 @@ public class InvoiceController {
     @FXML
     public void syncValue() throws IOException{
         setCustomerInfo();
-        setItems();
+        setItemList();
         setQuantity();
         setRate();
         setAmount();
@@ -97,6 +100,8 @@ public class InvoiceController {
         setDiscountAmountApplied();
         setShippingRates();
         setNetTotal();
+        paymentOptionChosen = getPaymentMode();
+
     }
 
     /*
@@ -111,12 +116,11 @@ public class InvoiceController {
             labelInvoice.setText("Please Fill all the Fields!");
         }
     }
-
     /*
-    * Set the Items from item text field*/
+    * Set the Items from item text field
     public void setItems(){
         items = item.items(item1.getText(), item2.getText(), item3.getText(), item3.getText(), item4.getText(), item5.getText());
-    }
+    }*/
 
     /**
      * Get the Items
@@ -187,6 +191,10 @@ public class InvoiceController {
         subTotal.setText(String.valueOf(amountTotalBeforeDiscount));
     }
 
+    public double getSubTotal(){
+        return amountTotalBeforeDiscount;
+    }
+
     public double getTaxPercent() {
         return taxPercent;
     }
@@ -211,7 +219,7 @@ public class InvoiceController {
 
     public void setGrossTotal(){
         this.grossTotalResult = taxApplied + amountTotalBeforeDiscount;
-        grossTotal.setText(String.valueOf(getGrossTotalResult()));
+        grossTotal.setText(String.valueOf(Math.ceil(getGrossTotalResult())));
     }
 
 
@@ -255,7 +263,25 @@ public class InvoiceController {
     public void setNetTotal() {
         this.netTotal = getGrossTotalResult() - getDiscountAmountApplied() + getShippingRates();
 
-        totalAmount.setText(String.valueOf(getNetTotal()));
+        totalAmount.setText(String.valueOf(Math.ceil(getNetTotal())));
+    }
+
+    public String getPaymentMode(){
+        if (radioCod.isSelected() && !radioOnline.isSelected() && !radioPaid.isSelected()){
+            return "CASH ON DELIVERY";
+        } else if (!radioCod.isSelected() && radioOnline.isSelected() && !radioPaid.isSelected()){
+            return "ONLINE PAYEMENT";
+        } else if (!radioCod.isSelected() && !radioOnline.isSelected() && radioPaid.isSelected()){
+            return "PAID";
+        }else return "Please choose a valid Mode of Payment";
+    }
+
+    public void setItemList(){
+        item.setItemFirst(item1.getText());
+        item.setItemSecond(item2.getText());
+        item.setItemThird(item3.getText());
+        item.setItemForth(item4.getText());
+        item.setItemFifth(item5.getText());
     }
 
 
@@ -264,6 +290,11 @@ public class InvoiceController {
         return 0;
         return Integer.parseInt(s);
     }
+
+    public String getPaymentOptionChosen() {
+        return paymentOptionChosen;
+    }
+
 
     private double stringToDouble(String s){
         if (checkIfNull(s))
